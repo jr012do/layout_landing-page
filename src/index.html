@@ -6,17 +6,288 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0"
     />
-    <title>Landing Page</title>
+    <title>THE-MET</title>
     <link
       rel="stylesheet"
       href="./styles/main.scss"
+    />
+    <link
+      rel="preconnect"
+      href="https://fonts.googleapis.com"
+    />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      href="./images/Logo.png"
     />
     <script
       src="scripts/main.js"
       defer
     ></script>
   </head>
-  <body>
-    <h1>Landing Page</h1>
+
+  <body class="page">
+    <section class="hero">
+      <header class="hero__header">
+        <div class="hero__container">
+          <div class="hero__container_logo">
+            <a
+              href="index.html"
+              class="hero__logo_link"
+            >
+              <img
+                src="./images/Logo.png"
+                alt="The MET Logo"
+                class="hero__logo"
+              />
+            </a>
+          </div>
+
+          <div
+            id="myNav"
+            class="hero__overlay"
+          >
+            <!-- Button to close the overlay navigation -->
+            <a
+              class="hero__overlay_closebtn"
+              onclick="closeNav()"
+            >
+              &times;
+            </a>
+
+            <div class="hero__overlay_logo">
+              <a
+                href="index.html"
+                class="hero__logo_link"
+              >
+                <img
+                  src="./images/Logo.png"
+                  alt="The MET Logo"
+                  class="hero__logo hero__logo_overlay"
+                />
+              </a>
+            </div>
+
+            <!-- Overlay content -->
+            <div class="hero__overlay_content">
+              <a
+                href="#"
+                class="hero__link"
+              >
+                Home
+              </a>
+              <a
+                href="#"
+                class="hero__link"
+              >
+                About us
+              </a>
+              <a
+                href="#"
+                class="hero__link"
+              >
+                Gallery
+              </a>
+              <a
+                href="#"
+                class="hero__link"
+              >
+                Explore Online
+              </a>
+              <a
+                href="#"
+                class="hero__link"
+              >
+                Contacts
+              </a>
+            </div>
+
+            <div class="hero__overlay_contacts">
+              <p class="hero__overlay_contacts_text">The Met Fifth Avenue</p>
+              <a
+                href="tel:+12125357710"
+                class="hero__link hero__link_contacts hero__link_phone"
+              >
+                +1 212-535-7710
+              </a>
+              <p class="hero__overlay_contacts_text">The Met Cloisters</p>
+              <a
+                href="tel:+12129233700"
+                class="hero__link hero__link_contacts hero__link_email"
+              >
+                +1 212-923-3700
+              </a>
+              <p class="hero__overlay_contacts_callOrder">Call to order</p>
+            </div>
+          </div>
+
+          <div class="hero__nav">
+            <span
+              onmouseover="hoverBtn()"
+              class="hero__nav_link call_btn"
+            >
+              <img
+                class="hero__btn hero__btn_call"
+                src="./images/Icon-Phone-call.png"
+                alt="Menu Icon"
+              />
+            </span>
+
+            <!-- Use any element to open/show the overlay navigation menu -->
+            <span
+              onclick="openNav()"
+              class="hero__nav_link"
+            >
+              <img
+                class="hero__btn hero__btn_overlay"
+                src="./images/Icon-Burger-menu.png"
+                alt="Menu Icon"
+              />
+            </span>
+          </div>
+        </div>
+      </header>
+
+      <div class="hero__text">
+        <h1 class="hero__title">Welcome to The MET</h1>
+      </div>
+    </section>
+
+    <section class="opening">
+      <div class="opening__container">
+        <div class="opening__text_main">
+          <h2 class="opening__title">Museum Hours</h2>
+          <span class="opening__title_span">Plan Your Visit</span>
+        </div>
+
+        <div class="opening__text_container-avenue">
+          <h3 class="opening__text-avenue">The Met Fifth Avenue</h3>
+
+          <div class="opening__time first">10 am - 5 pm</div>
+          <div class="opening__time_text second">Sun, Mon, Tue, Thu</div>
+          <div class="opening__time third">10 am - 9 pm</div>
+          <div class="opening__time_text fourth">Fri, Sat</div>
+          <div class="opening__time fifth">Closed</div>
+          <div class="opening__time_text sixth">Wen</div>
+          <div class="opening__time seventh">Closed on</div>
+          <div class="opening__time_text eighth">
+            Thanksgiving Day, Dec 25, Jan 1, and the first Monday in May.
+          </div>
+        </div>
+
+        <div class="opening__text_container-cloisters">
+          <h3 class="opening__text firstc">The Met Cloisters</h3>
+
+          <div class="opening__time secondc">10 am – 4.30 pm</div>
+          <div class="opening__time_text thirdc">Thu - Tue</div>
+          <div class="opening__time fourthc">Closed</div>
+          <div class="opening__time_text fifthc">Wen</div>
+          <div class="opening__time sixthc">Closed on</div>
+          <div class="opening__time_text seventhc">
+            Thanksgiving Day, Dec 25, Jan 1
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="gallery">
+      <div class="gallery__container">
+        <h2 class="gallery__title">Now on view</h2>
+        <p class="gallery__subtitle">
+          Explore exhibition gallery guides, videos, articles, and more.
+        </p>
+
+        <div class="gallery__grid">
+          <div class="gallery__item gallery__item1">
+            <img
+              src="./images/1_photo.png"
+              alt="Gallery Image 1"
+              class="gallery__img"
+            />
+
+            <img
+              src="./images/1_photo_right.png"
+              alt="Gallery Image 1.2"
+              class="gallery__img"
+            />
+
+            <div class="gallery__img_text">
+              <h3 class="gallery__img_title">A New Look at Old Masters</h3>
+              <p class="gallery__img_description">
+                December 12, 2020 – Through Spring 2023
+              </p>
+            </div>
+          </div>
+
+          <div class="gallery__item gallery__item2">
+            <img
+              src="./images/2_photo_left.png"
+              alt="Gallery Image 2"
+              class="gallery__img"
+            />
+
+            <img
+              src="./images/2_photo_center.png"
+              alt="Gallery Image 2.1"
+              class="gallery__img"
+            />
+
+            <img
+              src="./images/2_photo_right.png"
+              alt="Gallery Image 2.2"
+              class="gallery__img"
+            />
+
+            <div class="gallery__img_text">
+              <h3 class="gallery__img_title">
+                Bodhisattvas of Wisdom, Compassion, and Power
+              </h3>
+              <p class="gallery__img_description">
+                March 27, 2021 – October 30, 2022
+              </p>
+            </div>
+          </div>
+
+          <div class="gallery__item gallery__item3">
+            <img
+              src="./images/3_photo_left.png"
+              alt="Gallery Image 3"
+              class="gallery__img"
+            />
+
+            <img
+              src="./images/3_photo.png"
+              alt="Gallery Image 3"
+              class="gallery__img"
+            />
+
+            <div class="gallery__img_text">
+              <h3 class="gallery__img_title">
+                Inspiring Walt Disney: The Animation of French Decorative Arts
+              </h3>
+              <p class="gallery__img_description">
+                December 10, 2021 – March 6, 2022
+              </p>
+            </div>
+          </div>
+
+          <div class="gallery__btn_container">
+            <a
+              href="#"
+              class="gallery__btn"
+            >
+              View all exhibitions
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
   </body>
 </html>

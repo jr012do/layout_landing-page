@@ -1,3 +1,298 @@
 body {
   margin: 0;
+  padding: 0;
+  cursor:
+    url('../images/cursor.png') 0 0,
+    auto;
+}
+
+nav,
+a,
+img,
+.hero__nav_link {
+  cursor:
+    url('../images/cursor_hover.png') 0 0,
+    auto;
+}
+
+.page__menu.is-open {
+  transform: translateX(0);
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+
+.hero {
+  background: url('../images/hero.png') no-repeat center center/cover;
+  height: 840px;
+}
+
+.hero__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+}
+
+.hero__container {
+  width: 100vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20 80px;
+}
+
+/* The Overlay (background) */
+.hero__overlay {
+  height: 100%;
+  width: 0;
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  background-color: #d12d35; /* Black fallback color */
+  overflow-x: hidden; /* Disable horizontal scroll */
+  transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+}
+
+/* Position the content inside the overlay */
+.hero__overlay_content {
+  position: relative;
+  left: 5%;
+  top: 25%; /* 25% from the top */
+  width: 100%; /* 100% width */
+  margin: 30px 5px; /* 30px top margin to avoid conflict with the close button on smaller screens */
+}
+
+/* The navigation links inside the overlay */
+.hero__link {
+  padding: 4 8px;
+  text-decoration: none;
+  font-size: 22px;
+  font-weight: 700;
+  color: #fff;
+  display: block; /* Display block instead of inline */
+  transition: 0.3s; /* Transition effects on hover (color) */
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+/* Position the close button (top right corner) */
+.hero__overlay .hero__overlay_closebtn {
+  position: absolute;
+  top: 2%;
+  right: 4%;
+  font-size: 60px;
+  color: white;
+}
+
+.hero__overlay_contacts {
+  position: absolute;
+  top: 55%;
+  left: 6%;
+}
+
+.hero__overlay_contacts_text {
+  color: white;
+}
+
+.hero__link_contacts {
+  font-size: 12px;
+  padding-left: 0;
+}
+
+.hero__overlay_contacts_callOrder {
+  font-size: 12px;
+  text-decoration: underline;
+  color: white;
+}
+
+.hero__overlay_logo {
+  position: absolute;
+  top: 40px;
+  left: 80px;
+}
+
+.hero__btn {
+  height: 32px;
+  width: 32px;
+}
+
+.hero__nav {
+  display: flex;
+  gap: 32px;
+}
+
+.hero__text {
+  display: grid;
+  justify-items: center;
+}
+
+.hero__title {
+  text-align: center;
+  color: white;
+  font:
+    700 80px/80px Cinzel,
+    sans-serif;
+  max-width: 498px;
+}
+
+.hero_nav_link {
+  position: absolute;
+}
+
+.call_btn {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip::after {
+  content: '';
+  border-radius: 25%;
+  height: 80%;
+  width: 80%;
+  display: block;
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  box-shadow: inset 0 0 50px 32px #00000005;
+}
+
+.opening__container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  justify-items: center;
+  margin-top: 138px;
+}
+
+.opening__text_main {
+  grid-row: span 2 / span 2;
+  grid-column-start: 1;
+  grid-row-start: 1;
+}
+
+.opening__text_container-avenue {
+  grid-column-start: 2;
+  grid-row-start: 1;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(6, 0.5fr);
+}
+
+.opening__text {
+  grid-column: span 2;
+  grid-column-start: 1;
+  grid-row-start: 1;
+}
+
+.opening__time {
+  font-weight: 550;
+}
+
+.opening__title {
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 24px;
+  margin-bottom: 8px;
+}
+
+.opening__title_span {
+  position: relative;
+  z-index: 1;
+  color: #d12d35;
+  font-weight: 700;
+  font-size: 12px;
+  bottom: 60px;
+  left: 5px;
+}
+
+.first {
+  grid-column-start: 1;
+  grid-row-start: 2;
+}
+
+.second {
+  grid-column-start: 2;
+  grid-row-start: 2;
+}
+
+.third {
+  grid-column-start: 1;
+  grid-row-start: 3;
+}
+
+.fourth {
+  grid-column-start: 2;
+  grid-row-start: 3;
+}
+
+.fifth {
+  grid-column-start: 1;
+  grid-row-start: 4;
+}
+
+.sixth {
+  grid-column-start: 2;
+  grid-row-start: 4;
+}
+
+.eighth {
+  grid-column: span 2 / span 2;
+  grid-column-start: 1;
+  grid-row-start: 6;
+}
+
+.seventh {
+  grid-column: span 2;
+  grid-column-start: 1;
+  grid-row-start: 5;
+}
+
+.opening__text_container-cloisters {
+  display: grid;
+  grid-column-start: 2;
+  grid-row-start: 2;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(5, 0.5fr);
+}
+
+.firstc {
+  grid-column: span 2;
+  grid-column-start: 1;
+  grid-row-start: 1;
+}
+
+.secondc {
+  grid-column-start: 1;
+  grid-row-start: 2;
+}
+
+.thirdc {
+  grid-column-start: 2;
+  grid-row-start: 2;
+}
+
+.fourthc {
+  grid-column-start: 1;
+  grid-row-start: 3;
+}
+
+.fifthc {
+  grid-column-start: 2;
+  grid-row-start: 3;
+}
+
+.sixthc {
+  grid-column: span 2;
+  grid-column-start: 1;
+  grid-row-start: 4;
+}
+
+.seventhc {
+  grid-column: span 2;
+  grid-column-start: 1;
+  grid-row-start: 5;
 }
