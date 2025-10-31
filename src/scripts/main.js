@@ -1,6 +1,5 @@
-/* Open when someone clicks on the span element */
 function openNav() {
-  document.getElementById('myNav').style.width = '100%';
+  document.getElementById('myNav').style.width = '100vw';
   document.getElementById('myNav').classList.add('is-open');
   lockBody();
 }
@@ -12,18 +11,19 @@ function getScrollbarWidth() {
 function lockBody() {
   const w = getScrollbarWidth();
 
+  document.documentElement.style.overflow = 'hidden';
   document.body.style.overflow = 'hidden';
-  document.body.style.paddingRight = w + 'px'; // alebo margin-right
+  document.body.style.paddingRight = w + 'px';
   document.body.style.backgroundColor = '#d12d35';
 }
 
 function unlockBody() {
+  document.documentElement.style.overflow = '';
   document.body.style.overflow = '';
   document.body.style.paddingRight = '';
   document.body.style.backgroundColor = 'white';
 }
 
-/* Close when someone clicks on the "x" symbol inside the overlay */
 function closeNav() {
   document.getElementById('myNav').style.width = '0%';
   document.getElementById('myNav').classList.remove('is-open');
@@ -37,10 +37,10 @@ function hoverBtn() {
 
   const tooltip = {
     position: 'absolute',
-    top: '50%', // 👈 nad ikonou
-    right: '100%', // 👈 vystredí horizontálne
+    top: '50%',
+    right: '100%',
     transform: 'translateY(-50%)',
-    marginBottom: '8px', // medzera medzi ikonou a tooltipom
+    marginBottom: '8px',
     zIndex: '9999',
     backgroundColor: 'rgba(0, 0, 0, 0)',
     color: '#fff',
@@ -58,6 +58,13 @@ function hoverBtn() {
     line4: 'THE MET FIFTH CLOISTERS',
     line5: '+1 212-923-3700',
   };
+
+  if (window.matchMedia('(max-width: 344px)').matches) {
+    tooltip.top = '40%';
+    tooltip.fontSize = '10px';
+    tooltip.fontWeight = '700';
+    tooltip.right = '70%';
+  }
 
   const tooltipElement = document.createElement('div');
 
