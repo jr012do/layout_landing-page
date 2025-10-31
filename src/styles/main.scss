@@ -43,7 +43,7 @@ img,
   transform: translateX(0);
 }
 
-.no-scroll {
+.page:has(.no-scroll:target) {
   overflow: hidden;
 }
 
@@ -64,7 +64,8 @@ img,
   align-items: center;
   justify-content: space-between;
 
-  width: 100vw;
+  box-sizing: border-box;
+  width: 100%;
   padding: 20 80px;
 }
 
@@ -84,7 +85,7 @@ img,
 
 .hero__overlay_content {
   position: relative;
-  top: 25%;
+  top: 2%;
   left: 5%;
 
   width: 100%;
@@ -852,7 +853,6 @@ img:hover {
       }
 
       &_content {
-        top: 111px;
         margin: 0;
       }
 
@@ -1100,4 +1100,18 @@ img:hover {
   .footer__logo {
     display: none;
   }
+}
+
+.page:has(.is-active:target) {
+  overflow: hidden;
+}
+
+.hero__overlay_content_container {
+  position: sticky;
+  z-index: 21;
+  top: 0;
+
+  overflow: auto;
+
+  height: 120px;
 }

@@ -79,7 +79,7 @@ function hoverBtn() {
     tooltipElement.appendChild(p);
   }
 
-  btn.addEventListener('mouseleave', () => {
+  btn.addEventListener('mouseenter', () => {
     setTimeout(() => {
       if (btn.contains(tooltipElement)) {
         // btn.removeChild(tooltipElement);
@@ -95,3 +95,65 @@ function hoverBtn() {
     btn.removeChild(tooltipElement);
   });
 }
+
+(function attachOverlayLinkHandler() {
+  const nav = document.getElementById('myNav');
+
+  if (!nav) {
+    return;
+  }
+
+  nav.addEventListener(
+    'click',
+    (e) => {
+      const link = e.target.closest('a');
+
+      if (!link) {
+        return;
+      }
+
+      const href = link.getAttribute('href');
+
+      if (!href) {
+        return;
+      }
+
+      e.preventDefault();
+
+      closeNav();
+
+      const NAV_CLOSE_DELAY = 250;
+
+      setTimeout(() => {
+        if (link.target === '_blank') {
+          window.open(href, '_blank');
+
+          return;
+        }
+
+        if (href.startsWith('tel:') || href.startsWith('mailto:')) {
+          window.location.href = href;
+
+          return;
+        }
+
+        if (href.startsWith('#')) {
+          const target = document.querySelector(href);
+
+          if (target) {
+            target.scrollIntoView({ behavior: 'smooth' });
+
+            return;
+          }
+
+          window.location.hash = href;
+
+          return;
+        }
+
+        window.location.href = href;
+      }, NAV_CLOSE_DELAY);
+    },
+    false,
+  );
+})();
